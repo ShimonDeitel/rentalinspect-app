@@ -1,0 +1,27 @@
+{
+  "identifier" : "Rental Car Inspection",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "com.shimondeitel.rentalinspect.pro",
+      "localizations" : [
+        {
+          "description" : "Unlock Multi-rental history with damage annotation and timestamp proof",
+          "displayName" : "Rental Car Inspection Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.shimondeitel.rentalinspect.pro",
+      "referenceName" : "Rental Car Inspection Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {},
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

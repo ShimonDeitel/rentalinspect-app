@@ -1,0 +1,75 @@
+name: Rental Car Inspection
+options:
+  bundleIdPrefix: com.shimondeitel.rentalinspect
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Rental Car Inspection:
+    type: application
+    platform: iOS
+    sources:
+      - path: Rental Car Inspection
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.rentalinspect
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Rental Car Inspection/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  Rental Car InspectionTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Rental Car InspectionTests
+      - path: Rental Car Inspection.storekit
+    dependencies:
+      - target: Rental Car Inspection
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.rentalinspect.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  Rental Car InspectionUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Rental Car InspectionUITests
+    dependencies:
+      - target: Rental Car Inspection
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.rentalinspect.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Rental Car Inspection:
+    build:
+      targets:
+        Rental Car Inspection: all
+        Rental Car InspectionTests: [test]
+        Rental Car InspectionUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Rental Car Inspection.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Rental Car Inspection.storekit
+      targets:
+        - Rental Car InspectionTests
+        - Rental Car InspectionUITests
+    archive:
+      config: Release
